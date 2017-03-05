@@ -17,4 +17,6 @@ public class Administrator extends Actor {
 	}
 
 	//Getters and Setters
+
+	//Relationships
 }

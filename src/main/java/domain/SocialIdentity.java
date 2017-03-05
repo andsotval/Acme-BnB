@@ -5,6 +5,9 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Embeddable;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
+
 @Embeddable
 @Access(AccessType.PROPERTY)
 public class SocialIdentity {
@@ -21,6 +24,7 @@ public class SocialIdentity {
 	}
 
 	//Getters and Setters
+	@NotBlank
 	public String getNick() {
 		return nick;
 	}
@@ -28,7 +32,7 @@ public class SocialIdentity {
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
-
+	@NotBlank
 	public String getNameSocial() {
 		return nameSocial;
 	}
@@ -36,7 +40,7 @@ public class SocialIdentity {
 	public void setNameSocial(String nameSocial) {
 		this.nameSocial = nameSocial;
 	}
-
+	@URL
 	public String getUrl() {
 		return url;
 	}
@@ -44,5 +48,5 @@ public class SocialIdentity {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
+	//Relationships
 }
