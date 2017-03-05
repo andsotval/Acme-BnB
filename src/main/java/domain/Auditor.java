@@ -8,7 +8,6 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -40,7 +39,6 @@ public class Auditor extends Actor {
 	private Collection<Audit>	audits;
 
 
-	@NotNull
 	@Valid
 	@OneToMany(mappedBy = "auditor")
 	public Collection<Audit> getAudits() {

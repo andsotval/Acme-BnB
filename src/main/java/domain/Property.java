@@ -85,7 +85,7 @@ public class Property extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne()
+	@ManyToOne(optional = false)
 	public Lessor getLessor() {
 		return lessor;
 	}

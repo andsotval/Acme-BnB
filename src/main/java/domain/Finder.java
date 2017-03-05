@@ -67,9 +67,8 @@ public class Finder extends DomainEntity {
 	private Tenant	tenant;
 
 
-	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne()
 	public Cache getCache() {
 		return cache;
 	}
@@ -77,9 +76,8 @@ public class Finder extends DomainEntity {
 	public void setCache(Cache cache) {
 		this.cache = cache;
 	}
-	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne()
 	public Tenant getTenant() {
 		return tenant;
 	}

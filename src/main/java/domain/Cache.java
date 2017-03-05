@@ -48,7 +48,6 @@ public class Cache extends DomainEntity {
 	private Finder					finder;
 
 
-	@NotNull
 	@Valid
 	@ManyToMany()
 	public Collection<Property> getProperties() {
@@ -58,9 +57,8 @@ public class Cache extends DomainEntity {
 	public void setProperties(Collection<Property> properties) {
 		this.properties = properties;
 	}
-	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne()
 	public Finder getFinder() {
 		return finder;
 	}

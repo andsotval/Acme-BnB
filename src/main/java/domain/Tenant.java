@@ -43,7 +43,6 @@ public class Tenant extends Actor {
 	private Collection<Book>	books;
 
 
-	@NotNull
 	@Valid
 	@OneToOne()
 	public Finder getFinder() {
