@@ -64,11 +64,12 @@ public class Audit extends DomainEntity {
 		this.attachments = attachments;
 	}
 
-	public boolean isDraft() {
+	@NotNull
+	public boolean getIsDraft() {
 		return isDraft;
 	}
 
-	public void setDraft(boolean isDraft) {
+	public void setIsDraft(boolean isDraft) {
 		this.isDraft = isDraft;
 	}
 

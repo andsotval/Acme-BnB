@@ -461,46 +461,12 @@
 			</list>
 		</property>
 	</bean>
-	<!-- Audit -->
-	<bean id="audit1" class="domain.Audit">
-		<property name="moment" value=""/>
-		<property name="text" value=""/>
-		<property name="attachments">
-			<list>
-			</list>
-		</property>
-		<property name="isDraft" value=""/>
-		<property name="auditor" ref="auditor1" />
-		<property name="property" ref=""/>
-	</bean>
-	<bean id="audit2" class="domain.Audit">
-		<property name="moment" value=""/>
-		<property name="text" value=""/>
-		<property name="attachments">
-			<list>
-			</list>
-		</property>
-		<property name="isDraft" value=""/>
-		<property name="auditor" ref="auditor2" />
-		<property name="property" ref=""/>
-	</bean>	
-	<bean id="audit3" class="domain.Audit">
-		<property name="moment" value=""/>
-		<property name="text" value=""/>
-		<property name="attachments">
-			<list>
-			</list>
-		</property>
-		<property name="isDraft" value=""/>
-		<property name="auditor" ref="auditor3" />
-		<property name="property" ref=""/>
-	</bean>
 	<!-- Property -->
 	<bean id="property1" class="domain.Property">
 		<property name="name" value="Name1"/>
-		<property name="rate" value=""/>
-		<property name="description" value=""/>
-		<property name="address" value=""/>
+		<property name="rate" value="100.0"/>
+		<property name="description" value="descriptor1"/>
+		<property name="address" value="C/Primera Calle"/>
 		<property name="attributes">
 			<list>
 			</list>
@@ -516,14 +482,15 @@
 		</property>
 		<property name="audits">
 			<list>
+				<ref bean="audit1" />
 			</list>
 		</property>
 	</bean>
 	<bean id="property2" class="domain.Property">
 		<property name="name" value="Name2"/>
-		<property name="rate" value=""/>
-		<property name="description" value=""/>
-		<property name="address" value=""/>
+		<property name="rate" value="200.0"/>
+		<property name="description" value="descriptor2"/>
+		<property name="address" value="C/Segunda Calle"/>
 		<property name="attributes">
 			<list>
 			</list>
@@ -539,14 +506,15 @@
 		</property>
 		<property name="audits">
 			<list>
+				<ref bean="audit2" />
 			</list>
 		</property>
 	</bean>
 	<bean id="property3" class="domain.Property">
 		<property name="name" value="Name1"/>
-		<property name="rate" value=""/>
-		<property name="description" value=""/>
-		<property name="address" value=""/>
+		<property name="rate" value="150.0"/>
+		<property name="description" value="descriptor3"/>
+		<property name="address" value="C/Tercera Calle"/>
 		<property name="attributes">
 			<list>
 			</list>
@@ -562,7 +530,43 @@
 		</property>
 		<property name="audits">
 			<list>
+				<ref bean="audit3" />
 			</list>
 		</property>
 	</bean>
+	<!-- Audit -->
+	<bean id="audit1" class="domain.Audit">
+		<property name="moment" value="13/02/2017 12:00"/>
+		<property name="text" value=""/>
+		<property name="attachments">
+			<list>
+			</list>
+		</property>
+		<property name="isDraft" value="false"/>
+		<property name="auditor" ref="auditor1" />
+		<property name="property" ref="property1"/>
+	</bean>
+	<bean id="audit2" class="domain.Audit">
+		<property name="moment" value="13/02/2017 14:00"/>
+		<property name="text" value=""/>
+		<property name="attachments">
+			<list>
+			</list>
+		</property>
+		<property name="isDraft" value="false"/>
+		<property name="auditor" ref="auditor2" />
+		<property name="property" ref="property2"/>
+	</bean>	
+	<bean id="audit3" class="domain.Audit">
+		<property name="moment" value="13/02/2017 15:00"/>
+		<property name="text" value=""/>
+		<property name="attachments">
+			<list>
+			</list>
+		</property>
+		<property name="isDraft" value="false"/>
+		<property name="auditor" ref="auditor3" />
+		<property name="property" ref="property3"/>
+	</bean>
+	
 </beans>

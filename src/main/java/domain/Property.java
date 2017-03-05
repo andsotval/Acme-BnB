@@ -81,6 +81,7 @@ public class Property extends DomainEntity {
 	private Lessor				lessor;
 	private Collection<Audit>	audits;
 	private Collection<Cache>	caches;
+	private Collection<Book>	books;
 
 
 	@NotNull
@@ -113,6 +114,17 @@ public class Property extends DomainEntity {
 
 	public void setCaches(Collection<Cache> caches) {
 		this.caches = caches;
+	}
+	
+	@NotNull
+	@Valid
+	@OneToMany(mappedBy = "property")
+	public Collection<Book> getBooks(){
+		return books;
+	}
+	
+	public void setBooks(Collection<Book> books){
+		this.books = books;
 	}
 
 }
