@@ -12,8 +12,13 @@
 
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <jsp:useBean id="date" class="java.util.Date" />
 
 <hr />
 
-<b>Copyright &copy; <fmt:formatDate value="${date}" pattern="yyyy" /> Acme BnB Co., Inc.</b>
+<p><b>Copyright &copy; <fmt:formatDate value="${date}" pattern="yyyy" /> Acme Bnb Co., Inc.</b>&nbsp;|&nbsp;
+<a href="welcome/privacy.do#cookies"><spring:message code = "master.page.cookies" /></a>&nbsp;|&nbsp;
+<a href="welcome/privacy.do"><spring:message code = "master.page.privacy" /></a>&nbsp;|&nbsp;
+<a href="welcome/terms.do"><spring:message code = "master.page.terms" /></a></p>
