@@ -55,7 +55,6 @@ public class Audit extends DomainEntity {
 		this.text = text;
 	}
 	@ElementCollection
-	@URL
 	public Collection<String> getAttachments() {
 		return attachments;
 	}

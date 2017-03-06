@@ -55,11 +55,11 @@ public class Book extends DomainEntity {
 		this.checkOut = checkOut;
 	}
 
-	public boolean isSmoker() {
+	public boolean getIsSmoker() {
 		return isSmoker;
 	}
 
-	public void setSmoker(boolean isSmoker) {
+	public void setIsSmoker(boolean isSmoker) {
 		this.isSmoker = isSmoker;
 	}
 	@Valid
