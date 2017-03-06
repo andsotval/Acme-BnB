@@ -15,6 +15,7 @@ import java.util.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,26 +24,51 @@ import org.springframework.web.servlet.ModelAndView;
 public class WelcomeController extends AbstractController {
 
 	// Constructors -----------------------------------------------------------
-	
+
 	public WelcomeController() {
 		super();
 	}
-		
-	// Index ------------------------------------------------------------------		
+
+	// Index ------------------------------------------------------------------
 
 	@RequestMapping(value = "/index")
-	public ModelAndView index(@RequestParam(required=false, defaultValue="John Doe") String name) {
+	public ModelAndView index(@RequestParam(required = false, defaultValue = "John Doe") String name) {
 		ModelAndView result;
 		SimpleDateFormat formatter;
 		String moment;
-		
+
 		formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		moment = formatter.format(new Date());
-				
+
 		result = new ModelAndView("welcome/index");
 		result.addObject("name", name);
 		result.addObject("moment", moment);
 
 		return result;
 	}
+
+	@RequestMapping(value = "/privacy", method = RequestMethod.GET)
+
+	public ModelAndView privacy() {
+
+		ModelAndView result;
+
+		result = new ModelAndView("privacy/privacy");
+
+		return result;
+
+	}
+
+	@RequestMapping(value = "/terms", method = RequestMethod.GET)
+
+	public ModelAndView terms() {
+
+		ModelAndView result;
+
+		result = new ModelAndView("terms/terms");
+
+		return result;
+
+	}
+
 }
